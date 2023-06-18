@@ -1,0 +1,209 @@
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>OPERA RPG: Catandólares</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Amatic+SC">
+	<link rel = "stylesheet" href = "/style.css">
+	<script src = "js/main.js"></script>
+	<script src="js/sweetalert_min.js"></script>
+
+</head>
+<body>
+
+	<audio src="musica/Ele_Chegou.wav" autoplay loop volume="0.5"></audio>
+
+	<div class="centralizar">
+
+		<div class="container">
+
+			<div class="title P">
+
+				<p>Bem vindo a esta aventura Solo!</p>
+				<p>No Sistema OPERA RPG</p>
+
+			</div>
+
+			<div class="text-base">
+
+				<div class="text">
+
+					<p>Agora você jogara com Tomás, descrito em suas ficha logo á baixo, e o mestre do jogo sera o livro em texto.</p>
+
+					<p>Em um jogo de interpretação como o mestre presente, ele geralmente não te dará dicas sobre quais as opções um personagem poder seguir, o mestre apenas vai lhe contar  a historia e narrar seus momentos, cabe a você imaginar a situação que lhe está sendo narrada, calcular as opções e tomar suas decições.</p>
+
+					<p>Adpatando essa conversa para a escrita, foram previsto algumas alternativas para o jogador com ramificações para cada uma de suas ações, e só você pode escolher o caminho que Tomás ira trilhar</p>
+
+				</div>
+
+			</div>
+
+			<div class="botoes">
+
+				<div class="centralizar">
+
+					<button class="btn" onclick="showSecretDiv()">Comece a aventura!</button>
+
+				</div>
+
+			</div>
+
+			<div class="botoes">
+
+				<div class="centralizar">
+
+					<a href="https://operarpg.com.br/"><button>Que Conhecer o OPERA RPG?</button></a>
+
+				</div>
+
+			</div>
+
+			<div class="botoes">
+
+				<div class="centralizar">
+
+					<button>Quer saber como jogar?</button>
+
+				</div>
+
+			</div>
+
+			<div class="botoes">
+
+				<div class="centralizar">
+
+					<a href="/cre/créditos.html"><button class="btns" onclick="showCreditosDiv()">Créditos</button></a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+ <!-- Div secreta -->
+ <div id="secretDiv" class="secret-div">
+    <!-- Div do texto -->
+    <div id="divText">
+      <p id="text">Avellar chega em uma cafeteria onde vê que Dolloris está la dentro, sua vontade de vinganças anceia contra Dolloris, talvez ela esteja armando algo parada ali, ou talvez só esteja sendo incompetente, você para em frente a porta, oque irá fazer?</p>
+    </div>
+
+	<div id="creditosDiv" class="creditos-div">
+		<h2>Créditos</h2>
+		<p>Desenvolvido por: Seu Nome</p>
+	</div>
+
+    <!-- Div dos botões -->
+    <div id="botaoDiv">
+      <button id="button1" onclick="option1()">Não entrar</button>
+      <button id="button2" onclick="option2()">Entrar na cafeteria</button>
+      <button id="button3" onclick="option3()" style="display: none;">Ir embora com Medo</button>
+      <button id="button4" onclick="option4()" style="display: none;">Enfentrar</button>
+      <button id="button5" onclick="option5()" style="display: none;">Ir embora satisfeito</button>
+      <button id="button6" onclick="option6()" style="display: none;">Quebrar Bloqueio</button>
+      <button id="button7" onclick="option7()" style="display: none;">Olhar Dolloris</button>
+      <button id="button8" onclick="option8()" style="display: none;">Entregar a Faca</button>
+    </div>
+  </div>
+
+  <script>
+    var secretDiv = document.getElementById("secretDiv");
+    var divText = document.getElementById("divText");
+    var text = document.getElementById("text");
+    var botaoDiv = document.getElementById("botaoDiv");
+    var button1 = document.getElementById("button1");
+    var button2 = document.getElementById("button2");
+    var button3 = document.getElementById("button3");
+    var button4 = document.getElementById("button4");
+    var button5 = document.getElementById("button5");
+    var button6 = document.getElementById("button6");
+    var button7 = document.getElementById("button7");
+    var button8 = document.getElementById("button8");
+	
+
+    function showSecretDiv() {
+      secretDiv.style.display = "block";
+    }
+
+    function hideSecretDiv() {
+      secretDiv.style.display = "none";
+    }
+
+    function option1() {
+      text.textContent = "Você descide não entrar, Avellar talvez não esteja com tanta raiva assim, afinal foi só um coelho mesmo, melhor esquecer.";
+      button1.style.display = "none";
+      button2.style.display = "none";
+      button3.style.display = "none";
+      button4.style.display = "none";
+      button5.style.display = "none";
+      button6.style.display = "none";
+      button7.style.display = "none";
+      button8.style.display = "none";
+    }
+
+    function option2() {
+      text.textContent = "Você abre a porta, Dolloris nota sua presença, e em instantes começa a xingar Avellar, em questão de instantes, Dolloris joga uma faca que acerta de raspão Avellar fazendo um corte em seu rosto. O que irá fazer a seguir?";
+      button1.style.display = "none";
+      button2.style.display = "none";
+      showButtons(3, 4);
+    }
+
+    function option3() {
+      text.textContent = "Avellar sente medo e descidi ir embora, você se assusta com o corte e pensa que Dolloris é muito foda, nisso você se vira e sai correndo pela porta de entrada para evitar um climão, só que em quanto Avellar corre, ele tropeça em seu cadarço e cai em um cocô de cachorro na rua, se levantando percebe que Dolloris filmou tudo e dá risada de Avellar que volta para casa chorando.";
+      button3.style.display = "none";
+      button4.style.display = "none";
+      
+    }
+
+    function option4() {
+      text.textContent = "Avellar pega a mesma faca jogada por Dolloris e vai em direção da mesma, pulando pelas mesas demonstrando raiva em seu olhar. tentando a acertar bem no seu rosto, Dolloris segura sua mão mas nitidamente consegue ver o ódio em seu rosto, o que você fara a seguir?";
+      button3.style.display = "none";
+      button4.style.display = "none";
+      showButtons(5, 6);
+    }
+
+    function option5() {
+      text.textContent = "Avellar vê o medo no rosto de Dolloris e a joga par longe começa a soltar uma risada muito animada a maquiavélica e diz que só isso será o suficiente, ao sair pela porta, Avellar diz 'Nunca se esqueça de meu rosto, eu sempre estarei láte observando', em sequencia Avellar vai embora e desaparece nas sombras.";
+      button5.style.display = "none";
+      button6.style.display = "none";
+      button7.style.display = "none";
+      button8.style.display = "none";
+    }
+
+    function option6() {
+      text.textContent = "Avellar usa sua força para quebrar o bloqueio de Dolloris e acerta-la, com a faca acaba machucando Dolloris em seu braço que cai encolhida em um canto escuro, o que Avellar fará em sequencia?";
+      button5.style.display = "none";
+      button6.style.display = "none";
+      button7.style.display = "none";
+      button8.style.display = "none";
+	  showButtons(7, 8);
+    }
+
+    function option7() {
+      text.textContent = "Avellar se distrai em meio toda a situação, e por um instante ouvi o som que se assemelha á uma viatura policial, no mesmo instante Avellar descidi se utilizar de suas habilidades e dons da Arte que havera aprendido com os magos da cinegrafia, e tragicamente opta por se transforma em um Manequin comum, e seu corpo se transforma lentamente enquanto olha para Dolloris onde é possivel ver sua expressão nitida de medo com a situção, ela chora em seu canto observando seu agressor virar um Manequin sem vida.";
+      button5.style.display = "none";
+      button6.style.display = "none";
+      button7.style.display = "none";
+      button8.style.display = "none";
+    }
+
+    function option8() {
+      text.textContent = "Você descidi entregar a faca á Dolloris como piada, mas sem que Avellar notasse, uma criatura consome o corpo de Dolloris e se funde á ela, no mesmo instante Dolloris levanta rapidamente e apunha-la Avellar, você sente a faca penetrando seu estomago, antes de se dar conta, Dollores aparece em suas costa e começa a fatia-lo em pedaços, removendo seus braços e intestinos. Dolloris apos te fatiar te joga no chao quase sem vida e se aproxima e diz 'O medo está sempre observando', em sequencia crava lentamente a faca já sem ponta em seus olhos um a um, e deixa seu corpo ali já sem vida.";
+      button5.style.display = "none";
+      button6.style.display = "none";
+      button7.style.display = "none";
+      button8.style.display = "none";
+    }
+
+    function showButtons(start, end) {
+      for (var i = start; i <= end; i++) {
+        var button = document.getElementById("button" + i);
+        button.style.display = "inline-block";
+      }
+    }
+
+	function showCreditosDiv() {
+      creditosDiv.style.display = "block";
+      creditosDiv.classList.add("slideIn");
+    }
+  </script>
+</body>
+</html>
